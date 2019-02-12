@@ -1,13 +1,10 @@
-FROM openjdk:8
+FROM openjdk:8-alpine
 
 LABEL maintainer GIA team <GIADev@west.com>
 
 CMD ["sh"]
-RUN apt upgrade -y && \
-    apt update -y && \
-    apt install git curl bash grep maven -y && \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-    apt install nodejs -y && \
-    rm -rf /var/lib/apt/lists/* 
+RUN apk --update add git curl bash grep maven nodejs nodejs-npm && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm /var/cache/apk/*
 
 WORKDIR /home

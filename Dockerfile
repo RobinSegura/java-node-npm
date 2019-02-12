@@ -1,5 +1,4 @@
-# based from official node image (based on ubuntu:jessy)
-from openjdk:8
+FROM openjdk:8
 
 LABEL maintainer GIA team <GIADev@west.com>
 

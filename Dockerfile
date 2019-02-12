@@ -1,4 +1,4 @@
-FROM openjdk
+FROM openjdk:8
 
 LABEL maintainer Robin SEGURA <rsegura@outlook.fr>
 

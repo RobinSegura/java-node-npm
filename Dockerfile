@@ -4,11 +4,8 @@ LABEL maintainer Robin SEGURA <rsegura@outlook.fr>
 
 CMD ["sh"]
 
-RUN apt upgrade -y && \
-    apt update -y && \
-    apt install git curl bash grep -y && \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-    apt install nodejs -y && \
-    rm -rf /var/lib/apt/lists/* 
+RUN apk --upgrade install git curl bash grep nodejs nodejs-npm && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm /var/cache/apk/*
 
 WORKDIR /home
